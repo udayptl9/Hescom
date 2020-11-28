@@ -1,0 +1,535 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <style>
+        .section {
+            position: relative;
+            max-width: 70vw;
+            margin: 0 auto;
+            margin-top: 15px;
+            border: 0;
+            border-radius: 9px;
+            display: flex;
+            flex-direction: column;
+            overflow-x: auto;
+            box-shadow: 1px 1px 3px 1px grey;
+            min-height: 90vh;
+        }
+        button {
+            cursor: pointer;
+        }
+        .section .main_div {
+            min-width: 6000px;
+        }
+        table{
+            width: 100%;
+        }
+        table tr:nth-child(even) {
+            background: #f2f2f2;
+        }
+        td, th, table{ 
+            border-collapse: collapse;
+            padding: 2px;
+            text-align: center;
+        }
+        .part_a_button {
+            border: 0;
+            border-radius: 8px;
+            background:rgb(74, 74, 204);
+            padding: 5px;
+            color: white;
+            font-weight: bold;
+            width: 80px;
+            position: absolute;
+            right: 45px;
+        }
+        .backButtom, .goToPart0 {
+            border: 0;
+            border-radius: 8px;
+            background:rgb(74, 74, 204);
+            padding: 5px;
+            color: white;
+            font-weight: bold;
+            min-width: 80px;
+            position: absolute;
+            left: 45px;
+        }
+
+        .generateCombinations {
+            border: 0;
+            border-radius: 8px;
+            background:rgb(74, 74, 204);
+            padding: 5px;
+            color: white;
+            font-weight: bold;
+            min-width: 80px;
+            position: absolute;
+            left:0;
+            right:0;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table input {
+            border: 0;
+            background: transparent;
+        }
+        thead {
+            background: rgb(192, 188, 188);
+        }
+        .part_a, .part_b, .part_0, .part_c {
+            width: 70vw !important;
+            display: inline-block;
+            position: relative;
+            padding: 12px;
+            vertical-align: top;
+            margin-top: 20px;
+        }
+        .form {
+            width: 50vw;
+            padding: 12px;
+            margin: 12px;
+            margin: 0 auto;
+        }
+        .form div {
+            width: 100%;
+            margin: 15px;
+        }
+        .form label, .form input, .form textarea, .form select {
+            width: 100%;
+        }
+        .form input, .form select {
+            height: 30px;
+        }
+        .form input {
+            border: 0;
+            border-bottom: 1px solid black;
+        }
+    </style>
+    <div class="section">
+        <div class="main_div">
+            <div class="part_0 inline">
+                <h3 style="text-align: center;">Developer Info</h3>
+                <br>
+                <div class="form">
+                    <div>
+                        <label>Name of the Customer</label>
+                        <input type="text" class="nameOfTheCustomer">
+                    </div>
+                    <div>
+                        <label>S/y No</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Address</label>
+                        <textarea cols="30" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <label for="">District</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">City/Town</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Village</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Section</label>
+                        <select name="" id="">
+                            <option value="Section 1">Section 1</option>
+                            <option value="Section 2">Section 2</option>
+                            <option value="Section 3">Section 3</option>
+                            <option value="Section 4">Section 4</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">CSD</label>
+                        <select name="" id="">
+                            <option value="Option 1">Option 1</option>
+                            <option value="Option 2">Option 2</option>
+                            <option value="Option 3">Option 3</option>
+                            <option value="Option 4">Option 4</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="part_a_button">Next</button>
+            </div>
+            <div class="part_a inline">
+                <h3 style="text-align: center;">Part A: Plot Divisions</h3>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Size</th>
+                            <th>Power alloted in KW</th>
+                            <th>No. of Even Plots</th>
+                            <th>No. of Odd Plots</th>
+                            <th>Estimated load in KW</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>12 x 18 Mtr</td>
+                            <td>5</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>12 x 15 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>12 x 12 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>9 x 18 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>9 x 15 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>9 x 12 Mtr</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>9 Mtr Odd</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>W/s Bore Well</td>
+                            <td>3.7</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>No. of Street Light</td>
+                            <td>0.03</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table><br><br>
+                <div>
+                    <table style="width: 60%; margin: 0 auto;">
+                        <thead>
+                            <tr>
+                                <th>Load in KVA</th>
+                                <th>Load in KW / 0.85(PF) * 1.5(DF)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Your Load in KW</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>Load in KVA</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button style="margin-top: 45px;" class="generateCombinations">Generate Combinations</button>
+                </div>
+                <div style="margin-top: 90px;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Number of 100 KVA</th>
+                                <th>Number of 63 KVA</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="radio" name="select"></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="select"></td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="goToPart0" style="margin-top: 45px;">Back</button>
+                    <button class="part_a_button" style="margin-top: 45px;">Next</button>
+                </div>
+            </div>
+            <div class="part_b inline">
+                <h3 style="text-align: center;">Part A: Plot Divisions</h3>
+                <br>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl. No.</th>
+                            <th>Size</th>
+                            <th>Power alloted in KW</th>
+                            <th>No. of Even Plots</th>
+                            <th>No. of Odd Plots</th>
+                            <th>Estimated load in KW</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>12 x 18 Mtr</td>
+                            <td>5</td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>12 x 15 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>12 x 12 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>9 x 18 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>9 x 15 Mtr</td>
+                            <td>5</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>9 x 12 Mtr</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>9 Mtr Odd</td>
+                            <td>3</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>W/s Bore Well</td>
+                            <td>3.7</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>No. of Street Light</td>
+                            <td>0.03</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table><br><br>
+                <div>
+                    <table style="width: 60%; margin: 0 auto;">
+                        <thead>
+                            <tr>
+                                <th>Load in KVA</th>
+                                <th>Load in KW / 0.85(PF) * 1.5(DF)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Your Load in KW</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>Load in KVA</td>
+                                <td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="backButtom">Back</button>
+            </div>
+            <div class="part_c">
+                <h3 style="text-align: center;">PART A: HT LINE(LAYOUT TAPPING LINE)</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                SL/NO
+                            </th>
+                            <th>
+                                MATERIALS
+                            </th>
+                            <th>
+                                UNIT
+                            </th>
+                            <th>
+                                MATERIAL UNIT PRICE
+                            </th>
+                            <th>
+                                LABOUR UNIT PRICE
+                            </th>
+                            <th>
+                                QUANTITY
+                            </th>
+                            <th>
+                                MATERIALS COST
+                            </th>
+                            <th>
+                                LABOUR COST
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>9 Mtr Long PSC Pole</td>
+                            <td>Nos</td>
+                            <td>3689.00</td>
+                            <td>1166.00</td>
+                            <td><input type="number" name="quantitybox" id="1" value="" min="0" oninput="calculate()"></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>11 KV Horizontal Cross Arm With Single Top Support Clamps B &amp; N Etc</td>
+                            <td>Set</td>
+                            <td>444.00</td>
+                            <td>106.00</td>
+                            <td><input type="number" name="quantitybox" id="2" value="" min="0" oninput="calculate()"></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>11 KV Polymeric Pin Insulator With GI Pins</td>
+                            <td>Nos</td>
+                            <td>180.00</td>
+                            <td>0.00</td>
+                            <td><input type="number" name="quantitybox" id="3" value="" min="0" oninput="calculate()"></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>45 KN Polymeric Disc Insulator</td>
+                            <td>Nos</td>
+                            <td>164.00</td>
+                            <td>0.00</td>
+                            <td><input type="number" name="quantitybox" id="4" value="" min="0" oninput="calculate()"></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Spiral Earth Electrodes</td>
+                            <td>Nos</td>
+                            <td>165.00</td>
+                            <td>61.00</td>
+                            <td><input type="number" name="quantitybox" id="5" value="" min="0" oninput="calculate()"></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Guy Set Complete Set</td>
+                            <td>Set</td>
+                            <td>830.00</td>
+                            <td>390.00</td>
+                            <td><input type="number" name="quantitybox" id="6" value="" min="0" oninput="calculate()"></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Rabbit ACSR Conductor With 1.5% Sag</td>
+                            <td>Kms</td>
+                            <td>36497.00</td>
+                            <td>2869.00</td>
+                            <td><input type="number" name="quantitybox" id="7" value="" min="0" oninput="calculate()"></td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" style="text-align: center;">TOTAL COST</td>
+                            <td id="mtotal">0</td>
+                            <td id="ltotal">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button>Generate Total</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.part_a_button').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.part_a').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })
+        document.querySelector('.goToPart0').addEventListener('click', function (event) {
+                event.preventDefault();
+                document.querySelector('.part_0').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            })
+        // document.querySelector('.backButtom').addEventListener('click', function (event) {
+        //     event.preventDefault();
+        //     document.querySelector('.part_a').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // })
+    </script>
+{% endblock content %}

@@ -1,0 +1,80 @@
+{% extends 'app/base.html' %}
+{% block content %}
+<style>
+    .estimates {
+        width: 80%;
+        margin: 0 auto;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .estimates div {
+        padding: 8px;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px 1px;
+        margin: 8px;
+        font-size: 15px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .estimates div:hover {
+        transform: scale(1.04);
+    }
+    h3 {
+        text-align: center;
+        width: 100%;
+    }
+</style>
+<br>
+    <h3>Estimates</h3>
+    <div class="estimates">
+            <div>
+                Additional DTC Estimate
+            </div>
+            <div>
+                Extend LT, HT And 63 DTC 
+            </div>
+            <div>
+                HT INSTALLATION ESTIMATE
+            </div>
+            <div>HT INSTALLATION EXTENSION ESTIMATE</div>
+            <div>
+                IP SET 25 KVA TC ESTIMATE
+            </div>
+            <div>
+                IP SET 63 KVA TC ESTIMATE
+            </div>
+            <div>
+                IP SET 100 KVA TC ESTIMATE
+            </div>
+            <div>
+                IP SET 100 KVA TC ESTIMATE
+            </div>
+            <div onclick="window.location.href=`{% url 'layout_ugd_city' %}`">
+                LAYOUT UGD CITY
+            </div>
+            <div>
+                LT LINE DOMESTIC ONLY
+            </div>
+            <div>
+                LT LINE IP SET ONLY
+            </div>
+            <div>
+                MOBILE TOWER ESTIMATE
+            </div>
+            <div>
+                MP ESTIMATE
+            </div>
+            <div>
+                REPLACE LT & HT RABBIT TO ABC ESTIMATE
+            </div>
+            <div>
+                REPLACE LT RABBIT TO ABC ESTIMATE
+            </div>
+            <p></p>
+            <div>
+                SPUN POLE MSB ESTIMATE
+            </div>
+    </div>
+{% endblock content %}

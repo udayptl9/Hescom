@@ -1,0 +1,47 @@
+{% extends 'app/base.html' %}
+{% block content %}
+    <style>
+        .services {
+            width: 60%;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        .services h3 {
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            color: blue;
+            margin-bottom: 15px;
+        }
+        .services div div {
+            padding: 20px;
+            margin: 0 auto;
+            background: white;
+            margin-bottom: 10px;
+            width: 400px;
+            text-align: center;
+            border: 0;
+            box-shadow: 1px 1px 3px 1px grey;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .services div div:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <div class="services">
+        <h3>Services</h3>
+        <div>
+            <div onclick="window.location.href = `{% url 'estimates' %}`">
+                Generate Estimate
+            </div>
+            <div>
+                Generate Report
+            </div>
+            <div>
+                Generate Bill
+            </div>
+        </div>
+    </div>
+{% endblock content %}
