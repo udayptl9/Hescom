@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import MainMaterials
+from .models import MainMaterial
 
-admin.site.register(MainMaterials)
+admin.site.register(MainMaterial)
